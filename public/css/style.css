@@ -1,0 +1,154 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat';
+    line-height: 180%;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.large-header {
+    position: relative;
+    background-image: url("../img/loader.jpg");
+    width: 100%;
+    
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+}
+
+.svg-loader {
+    width: 100%;
+    position: absolute;
+    top: 38%;
+}
+
+#logo{
+    width : 100%;
+    margin : 10px;
+    animation: fill 0.5s ease forwards 1.2s;
+}
+
+#logo path:nth-child(1){
+    stroke-dasharray: 507;
+    stroke-dashoffset: 507;
+    animation : line-anim 0.5s ease forwards;
+}
+
+
+#logo path:nth-child(2){
+    stroke-dasharray: 712;
+    stroke-dashoffset: 712;
+    animation : line-anim 0.5s ease forwards 0.1s;
+}
+
+#logo path:nth-child(3){
+    stroke-dasharray: 525;
+    stroke-dashoffset: 525;
+    animation : line-anim 0.5s ease forwards 0.2s;
+}
+
+#logo path:nth-child(4){
+    stroke-dasharray: 591;
+    stroke-dashoffset: 591;
+    animation : line-anim 0.5s ease forwards 0.3s;
+}
+
+#logo path:nth-child(5){
+    stroke-dasharray: 368;
+    stroke-dashoffset: 368;
+    animation : line-anim 0.5s ease forwards 0.4s;
+}
+
+#logo path:nth-child(6){
+    stroke-dasharray: 591;
+    stroke-dashoffset: 591;
+    animation : line-anim 0.5s ease forwards 0.5s;
+}
+
+#logo path:nth-child(7){
+    stroke-dasharray: 562;
+    stroke-dashoffset: 562;
+    animation : line-anim 0.5s ease forwards 0.6s;
+}
+
+#logo path:nth-child(8){
+    stroke-dasharray: 444;
+    stroke-dashoffset: 444;
+    animation : line-anim 0.5s ease forwards 0.7s;
+}
+
+#logo path:nth-child(9){
+    stroke-dasharray: 339;
+    stroke-dashoffset: 339;
+    animation : line-anim 0.5s ease forwards 0.8s;
+}
+
+#logo path:nth-child(10){
+    stroke-dasharray: 562;
+    stroke-dashoffset: 562;
+    animation : line-anim 0.5s ease forwards 0.9s;
+}
+
+#logo path:nth-child(11){
+    stroke-dasharray: 464;
+    stroke-dashoffset: 464;
+    animation : line-anim 0.5s ease forwards 1.0s;
+}
+
+#logo path:nth-child(12){
+    stroke-dasharray: 368;
+    stroke-dashoffset: 368;
+    animation : line-anim 0.5s ease forwards 1.1s;
+}
+
+
+h3{
+    width:100%;
+    color : white;
+    position: absolute;
+    bottom:0;
+    text-align:center;
+}
+
+.heading-2{
+    margin-top : 20px;
+    color : white;
+    font-size : 2.1em;
+    font-family: 'Montserrat';
+    text-align : center;
+    font-stretch: expanded;
+    font-weight: 200;
+}
+
+.about-section{
+    height:100vh;
+    width : 100vw;
+}
+
+
+@keyframes line-anim {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill{
+    from{
+        fill : transparent;
+    }
+    to{
+        fill : white;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .demo {
+        font-size: 3em;
+    }
+}
