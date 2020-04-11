@@ -6,7 +6,7 @@ const auth = async (req, res, next) => {
         const token = req.header('Authorization').replace('Bearer ', '');
         const decode = jwt.verify(token, 'SecretKey');
 
-        const user = await User.findOne({_id : decoded.id, 'tokens.token' : token });
+        const user = await User.findOne({_id : decode.id, 'tokens.token' : token });
         if(!user){
             throw new Error({error : "Invalid Authorization token"});
         }
