@@ -12,7 +12,8 @@ const userSchema = mongoose.Schema({
         type : String,
         required : true,
         trim : true,
-        lowercase : true
+        lowercase : true,
+        unique : true
     },
     password : {
         type : String,
@@ -24,7 +25,10 @@ const userSchema = mongoose.Schema({
             type : String,
             required : true
         }
-    }]
+    }],
+    avatar : {
+        type : Buffer
+    }
 });
 
 userSchema.methods.toJSON = function() {

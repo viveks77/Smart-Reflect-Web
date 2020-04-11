@@ -1,6 +1,14 @@
 const express = require('express');
+const multer = require('multer');
+const sharp = require('sharp');
 const auth = require('../middleware/auth');
 const User = require('../models/userModel')
+
+const upload = multer({
+    limits: {
+        fileSize : 1000000
+    }
+});
 
 const router = express.Router();
 
@@ -39,11 +47,28 @@ router.post('/user/logout', auth, async(req, res) => {
     }
 });
 
+router.post('/user/profile/avatar', auth, upload.single('avatar'), async (req, res) => {
+    const buffer = await sharp(req.file.buffer).resize({width: 250, height: 250}).png().toBuffer();
+    req.user.avatar = buffer;
+    await req.user.save();
+    res.status(200).send();
+}, (err, req,  res, next) => {
+    res.status(400).send(({error : err.message}));
+});
+
 router.get('/user/profile', auth, async(req, res) => {
     try{
         res.status(200).send(req.user);
     }catch(e){
         res.status(400).send(e);
+    }
+});
+
+router.get('/user/profile/avatar', auth, (req, res) => {
+    try{
+        res.status(200).send(req.user.avatar);
+    }catch(e){
+        res.status(400).send(e)
     }
 });
 
