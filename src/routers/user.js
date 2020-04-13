@@ -56,6 +56,10 @@ router.post('/user/profile/avatar', auth, upload.single('avatar'), async (req, r
     res.status(400).send(({error : err.message}));
 });
 
+router.get('/login', (req, res) => {
+    res.render('login');
+})
+
 router.get('/user/profile', auth, async(req, res) => {
     try{
         res.status(200).send(req.user);
