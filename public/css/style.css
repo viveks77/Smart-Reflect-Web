@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins';
+    background-color: #ebebeb;
+}
+
+.main-content{
+    height : 100%;
+    width : 100%;
+    display : flex;
+    justify-content: center;
+
+}
+
+.form-outline{
+    background-color: white;
+    position: absolute;
+    top : 25vh;
+    margin : 10px;
+    padding : 55px 50px;
+    border-radius : 8px;
+}
+
+.form-outline h3{
+    padding-bottom : 10px;
+    font-family : 'Raleway';
+    font-size : 2rem;
+}
+
+.form-outline .form-group{
+    padding : 10px 0px;
+    font-size : 0.8rem;
+    font-family : 'Raleway';
+}
+
+.form-outline button{
+    font-size : 0.8rem;
+}
