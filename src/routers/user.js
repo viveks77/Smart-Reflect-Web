@@ -57,6 +57,10 @@ router.post('/user/profile/avatar', auth, upload.single('avatar'), async (req, r
 });
 
 router.get('/login', (req, res) => {
+    res.render('login');
+})
+
+router.get('/dashboard', (req, res) => {
     res.render('dashboard', {
         active : "DashBoard"
     });
