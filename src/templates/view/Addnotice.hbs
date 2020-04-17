@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.dashboard.css">
+    <title>Login</title>
+</head>
+
+<body>
+    {{>header}}
+    <div id="wrapper">
+        <div id="sidemenu" class="sidemenu active">
+            <ul>
+                <li><a href="#">View Notices</a></li>
+                <li><a href="/addnotice">Add Notice</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div id="main" class="main">
+            <div id="add-notices">
+                <h1>Add Notices</h1>
+                <form>
+                    <div class="form-group row">
+                        <label for="title" class="col-sm-2 col-form-label">Title</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="title" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="content" class="col-sm-2 col-form-label">Content</label>
+                        <div class="col-sm-10">
+                            <textarea type="text" class="form-control" id="content" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="authority" class="col-sm-2 col-form-label">By</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="authority" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="expire-date" class="col-sm-2 col-form-label">Valid till</label>
+                        <div class="col-sm-10">
+                            <input type="date" id="expire-date" class="form-control">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-dark">ADD</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/js/dashboard.js"></script>
+</body>
+
+</html>

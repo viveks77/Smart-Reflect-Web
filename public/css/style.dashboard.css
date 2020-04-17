@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&family=Roboto:wght@300&family=Source+Sans+Pro&display=swap');
+
+html {
+    text-decoration: none;
+    height : 100%;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    min-height: 100%;
+    width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#navbar{
+    background-color: #3d3d3d;
+    color : white;
+}
+
+#navbar span{
+    font-size : 22px;
+    padding : 2px 10px;
+}
+
+#navbar svg{
+    
+    border-radius: 3px;
+    transition : background-color 0.2s linear;
+}
+
+#navbar svg:hover{
+    background-color : rgba(255,255,255,0.2);
+}
+
+#nav-toogles a{
+    text-decoration: none;
+    padding : 0px 15px;
+    color : white;
+}
+
+#wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+#sidemenu {
+    height: 100%;
+    width: 230px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fafafa;
+    color: black;
+    transition: 0.2s ease-in;
+}
+
+#sidemenu ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+#sidemenu a {
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: block;
+    font-size: 20px;
+    color: black;
+}
+
+#main {
+    margin-top : 20px;
+    margin-left: 320px;
+    margin-right: 50px;
+    transition: 0.2s ease-in;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#add-notice-link{
+    margin: 5px 3px;
+    padding : 10px 0px;
+    text-decoration: none;
+}
+
+#add-notice-link a{
+    text-decoration: none;
+    color : #3d3d3d;
+    font-family: 'Roboto';
+}
+
+.icon-add{
+    padding : 0px 10px;
+}
+
+.collapsible {
+    background-color: transparent;
+    color: #444;
+    cursor: pointer;
+    margin-top : 10px;
+    padding: 10px 0px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 25px;
+    border-bottom: 1px solid black;
+}
+
+button:focus {outline:0;}
+
+.content {
+    padding: 0 0px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    font-family: 'Roboto';
+}
+
+#add-notices{
+    margin: 3px 3px;
+    padding : 10px 0px;
+    text-decoration: none;
+    width : 780px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#add-notices h1{
+    margin-bottom : 15px;
+    padding-bottom : 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#add-notices .form-group{
+    margin: 20px 0px;
+    padding : 15px 0px;
+}
+
+#add-notices #content{
+    height : 250px;
+    font-size : 15px;
+}
+
+#add-notices button{
+    margin : 10px 5px;
+}
+
+#add-notices #expire-date{
+    width : 200px;
+}
