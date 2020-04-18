@@ -27,9 +27,10 @@ router.post('/user/login', async (req, res) => {
     try{
         const user = await User.findByCredentials(req.body.email, req.body.password);
         const token = await user.generateAuthId();
-        res.status(200).send({user, token});
+        res.status(200).render('dashboard');
+        res.send({token});
     }catch(e){
-        res.status(400).send({error : e});
+        res.status(400).render('login',{error : "Invalid Credentials"});
     }
 });
 
@@ -66,7 +67,7 @@ router.get('/dashboard', (req, res) => {
     });
 })
 
-router.get('/addnotice', (req, res) => {
+router.get('/addnotice', auth, (req, res) => {
     res.render('Addnotice', {
         active : "Add Notices"
     });

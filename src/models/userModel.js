@@ -20,6 +20,10 @@ const userSchema = mongoose.Schema({
         required : true,
         trim : true
     },
+    phoneNo : {
+        type : String,
+        trim : true
+    },
     tokens : [{
         token : {
             type : String,
