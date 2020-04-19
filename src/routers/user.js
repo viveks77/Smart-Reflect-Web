@@ -1,14 +1,6 @@
 const express = require('express');
-const multer = require('multer');
-const sharp = require('sharp');
 const auth = require('../middleware/auth');
 const User = require('../models/userModel')
-
-const upload = multer({
-    limits: {
-        fileSize : 1000000
-    }
-});
 
 const router = express.Router();
 
@@ -27,10 +19,10 @@ router.post('/user/login', async (req, res) => {
     try{
         const user = await User.findByCredentials(req.body.email, req.body.password);
         const token = await user.generateAuthId();
+        res.cookie("token", token);
         res.status(200).render('dashboard', {
             active : "Dashboard"
         });
-        //res.send({token});
     }catch(e){
         res.status(400).render('login',{error : "Invalid Credentials"});
     }
@@ -39,14 +31,15 @@ router.post('/user/login', async (req, res) => {
 
 router.post('/user/logout', auth, async(req, res) => {
     try{
-        const tokens = req.user.tokens.filer(token => {
-            return token != req.token
+        
+        const tokens = req.user.tokens.filter(token => {
+            return token.token != req.token
         });
         req.user.tokens = tokens;
         await req.user.save();
-        res.status(200).send({msg : "logout Successfully"});
+        res.status(200).redirect('/login');
     }catch(e){
-        res.status(400).send(e);
+        res.status(400).send({error : "cannot logout"});
     }
 });
 
@@ -54,7 +47,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 })
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', auth, (req, res) => {
     res.render('dashboard', {
         active : "DashBoard"
     });
@@ -66,15 +59,14 @@ router.get('/addnotice', auth, (req, res) => {
     });
 })
 
-router.get('/profile', (req, res) => {
-    res.render('profile', {
-        active : "Profile"
-    });
-})
-
 router.get('/user/profile', auth, async(req, res) => {
     try{
-        res.status(200).send(req.user);
+        res.status(200).render('profile',{
+            active : "Profile",
+            name : req.user.name,
+            email : req.user.email,
+            phoneNo : req.user.phoneNo
+        });
     }catch(e){
         res.status(400).send(e);
     }
@@ -82,13 +74,13 @@ router.get('/user/profile', auth, async(req, res) => {
 
 router.post('/user/update', auth, async (req, res) => {
     const updates = Object.keys(req.body);
-    
+
     try{
         updates.forEach(update => {
-            req.user[update] = req.user[update]
+            req.user[update] = req.body[update]
         })
     await req.user.save();
-    res.status(200).send(req.user);
+    res.status(200).redirect('/user/profile');
     }catch(e){
         res.status(400).send(e);
     }

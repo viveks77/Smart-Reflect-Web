@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const hbs = require('hbs');
+const coookieparser = require('cookie-parser');
 require('./db/mongo');
 const path = require('path');
 const userRouter = require('./routers/user');
@@ -16,7 +17,7 @@ const partialsPath = path.join(__dirname, '/templates/partials')
 
 app.use(express.static(publicDirPath));
 app.use(bodyparser.urlencoded({extended : true}));
-
+app.use(coookieparser());
 app.set('view engine', 'hbs');
 app.set('views', viewsPath);
 hbs.registerPartials(partialsPath);

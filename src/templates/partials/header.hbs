@@ -3,8 +3,10 @@
         <span onClick="openMenu()"><svg class="menu_icon" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M4.5 5h15a.5.5 0 1 1 0 1h-15a.5.5 0 0 1 0-1zm0 6h15a.5.5 0 1 1 0 1h-15a.5.5 0 1 1 0-1zm0 6h15a.5.5 0 1 1 0 1h-15a.5.5 0 1 1 0-1z"></path></svg></span>
         <span>{{active}}</span>
         </div>
-        <div id="nav-toogles">
-            <a href="/profile">Me</a>
-            <a href="#">Logout</a>
+        <div id="nav-toogles" class="row" style="margin-right:5px;">
+            <a href="/user/profile" style ="margin-top : 5px; margin-right:10px; font-size : 20px;">Me</a>
+            <form method = "POST" action ="/user/logout">
+                <button class = "btn btn-outline-light" type = "submit">Logout</button>
+            </form>
         </div>
     </nav>
