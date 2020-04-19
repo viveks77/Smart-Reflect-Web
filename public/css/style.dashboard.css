@@ -154,3 +154,58 @@ button:focus {outline:0;}
 #add-notices #expire-date{
     width : 200px;
 }
+
+#info-contents{
+    margin-top : 50px;
+}
+
+.wrapper-info{
+    width : 100%;
+    margin : 10px 5px;
+    padding : 10px 5px;
+    display : flex;
+}
+
+.wrapper-info .add{
+    min-width : 200px;
+    max-width : 250px;
+    margin : 0px 25px 0px 0px;
+}
+
+.wrapper-info a{
+    margin : 0px 15px;
+    padding-left : 10px;
+} 
+
+.wrapper-info .edit-btn{
+    margin: 5px 20px;
+    background-color: transparent;
+    text-decoration : underline;
+    border : none;
+}
+
+.wrapper-info .btn-collapse{
+    margin : 0px 5px;
+    background-color : transparent;
+    text-decoration : underline;
+    border : none;
+    color : #444;
+}
+
+.btn-collapse:focus{
+    outline:0;
+}
+
+.btn-collapse:hover{
+    color : black;
+}
+
+.hide{
+    display : none;
+}
+
+.pass-form input{
+    width : 340px;
+    margin-bottom : 15px;
+    padding : 5px;
+}
