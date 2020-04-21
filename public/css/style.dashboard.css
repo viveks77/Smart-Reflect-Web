@@ -70,7 +70,7 @@ body {
     text-decoration: none;
     margin-bottom: 20px;
     display: block;
-    font-size: 20px;
+    font-size: 25px;
     color: black;
 }
 
@@ -80,6 +80,7 @@ body {
     margin-right: 50px;
     transition: 0.2s ease-in;
     font-family: 'Open Sans', sans-serif;
+    width : 100%;
 }
 
 #add-notice-link{
@@ -104,7 +105,7 @@ body {
     cursor: pointer;
     margin-top : 10px;
     padding: 10px 0px;
-    width: 100%;
+    min-width: 100%;
     border: none;
     text-align: left;
     outline: none;
