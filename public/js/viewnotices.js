@@ -3,7 +3,7 @@ const deleteNotice = document.querySelector('#datacontainer');
 
 
 const viewNotices = (data, id) => {
-    console.log(data.title);
+   
     const html = `
     <div id="view-data" data-id= "${id}"  class = "noticeContainer">
                         <button type="button" class="collapsible">${data.title}</button>
@@ -29,7 +29,6 @@ const removeNotice = (id) => {
 
 db.collection('notices').onSnapshot(snapshot => {
     snapshot.docChanges().forEach(change => {
-        console.log(2)
         if (change.type === 'added') {
             viewNotices(change.doc.data(), change.doc.id);
         }
@@ -40,9 +39,8 @@ db.collection('notices').onSnapshot(snapshot => {
 })
 
 deleteNotice.addEventListener('click', e => {
-    console.log(e.target.classList.contains('deleteNotice'));
     if (e.target.classList.contains('deleteNotice')) {
-        console.log(e.target.classList)
+       
         var dataId = e.target.parentElement.parentElement.getAttribute('data-id');
         db.collection('notices').doc(dataId).delete().then(e => console.log('Deleted Successfully')).catch(err => console.log(err));
     }

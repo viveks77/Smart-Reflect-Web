@@ -29,6 +29,7 @@ document.querySelector('.btn-pass').addEventListener('click', function () {
 
 const passForm = document.querySelector("#pass-update");
 const btnsubmit = document.querySelector('.btnSubmit');
+
 passForm.addEventListener("submit", e => {
     const oldPass = passForm.confirmPassword.value;
     const newPass = passForm.password.value;
@@ -36,4 +37,5 @@ passForm.addEventListener("submit", e => {
         alert("Password doesnot match");
         e.preventDefault();
     }
+    alert("Password Changed successfully");
 })

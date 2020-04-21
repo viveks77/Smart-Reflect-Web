@@ -62,7 +62,7 @@
                         <div class="edit-content hide">
                             <form method = "POST" action="/user/update">
                                 <div class="form-group row">
-                                    <input class="form-control col" id="phoneNo">
+                                    <input name = "phoneNo" class="form-control col" id="phoneNo">
                                     <button class="btn-collapse col-sm-2" type="submit">Save</button>
                                     <button class="btn-collapse col-sm-2 btn-cancel" type="button">Cancel</button>
                                 </div>
@@ -84,7 +84,7 @@
                                     <label for="confirm-password">Enter new Password</label>
                                     <input name = "confirmPassword" type="password" class="form-control" id="confirm-password" required>
                                     <label for="password">Confirm Password</label>
-                                    <input type="password" class="form-control" id="password" required>
+                                    <input name = "password" type="password" class="form-control" id="password" required>
                                     <button class="btn btn-dark btnSubmit">Change Password</button>
                                 </div>
                             </form>

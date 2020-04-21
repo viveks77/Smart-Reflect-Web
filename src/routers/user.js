@@ -74,7 +74,7 @@ router.get('/user/profile', auth, async(req, res) => {
 
 router.post('/user/update', auth, async (req, res) => {
     const updates = Object.keys(req.body);
-
+    
     try{
         updates.forEach(update => {
             req.user[update] = req.body[update]
