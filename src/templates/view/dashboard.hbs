@@ -27,20 +27,34 @@
                         </svg></span>
                     <a href="/addnotice">Add Notice</a>
                 </div>
-                <div id="view-data">
-                    <button type="button" class="collapsible">Title</button>
-                    <div class="content">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A accusantium eligendi praesentium
-                            repellat laudantium quaerat illo ea doloremque laboriosam qui, dignissimos rem non aliquam
-                            pariatur sequi numquam nam quasi consectetur?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis qui, deleniti voluptate
-                            necessitatibus aut deserunt accusantium modi nemo illum animi, officia laborum ullam, error
-                            incidunt adipisci fuga doloribus nisi quidem!</p>
-                    </div>
+                <div id="datacontainer">
+                    <!-- Js code to add notices-->
                 </div>
             </div>
         </div>
     </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD1bxJIelYlnnZHE5HL4uOHDYcDMmAWCOY",
+            authDomain: "notice-board-52635.firebaseapp.com",
+            databaseURL: "https://notice-board-52635.firebaseio.com",
+            projectId: "notice-board-52635",
+            storageBucket: "notice-board-52635.appspot.com",
+            messagingSenderId: "61886274319",
+            appId: "1:61886274319:web:c7c2a7923264faf0d57c7a"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+    <script src="/js/viewnotices.js"></script>
     <script src="/js/dashboard.js"></script>
 </body>
 
