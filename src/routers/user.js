@@ -59,6 +59,12 @@ router.get('/addnotice', auth, (req, res) => {
     });
 })
 
+router.get('/about', auth, (req, res) => {
+    res.render('About',{
+        active : "About Us"
+    });
+})
+
 router.get('/user/profile', auth, async(req, res) => {
     try{
         res.status(200).render('profile',{

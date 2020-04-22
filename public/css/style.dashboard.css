@@ -210,3 +210,15 @@ button:focus {outline:0;}
     margin-bottom : 15px;
     padding : 5px;
 }
+
+#about-section{
+    margin-top : 10px;
+}
+
+#about-section h1{
+    margin-bottom : 10px;
+}
+
+#about-section p{
+    margin : 20px 0px;
+}
