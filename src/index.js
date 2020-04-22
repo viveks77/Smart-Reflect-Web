@@ -10,7 +10,7 @@ const userRouter = require('./routers/user');
 const app = express();
 
 
-const port = process.env.PORT || 3030;
+const port = process.env.PORT;
 const publicDirPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '/templates/view');
 const partialsPath = path.join(__dirname, '/templates/partials')

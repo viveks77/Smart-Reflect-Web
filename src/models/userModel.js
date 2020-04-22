@@ -29,10 +29,7 @@ const userSchema = mongoose.Schema({
             type : String,
             required : true
         }
-    }],
-    avatar : {
-        type : Buffer
-    }
+    }]
 });
 
 userSchema.methods.toJSON = function() {
@@ -49,7 +46,7 @@ userSchema.methods.generateAuthId = async function(){
 
     const token = jwt.sign({
         id : user._id.toString()
-    }, 'SecretKey');
+    }, process.env.JWT_SECRET_KEY);
     user.tokens = user.tokens.concat({
         token
     });
@@ -75,8 +72,6 @@ userSchema.statics.findByCredentials = async (email, password) => {
 
     return user;
 }
-
-
 
 userSchema.pre('save', async function(next) {
     const user = this;
