@@ -1,15 +1,14 @@
 const noticeContainer = document.querySelector('#datacontainer');
 const deleteNotice = document.querySelector('#datacontainer');
 
-
 const viewNotices = (data, id) => {
-   
+
     const html = `
-    <div id="view-data" data-id= "${id}"  class = "noticeContainer">
-                        <button type="button" class="collapsible">${data.title}</button>
-                        <div class="content">
+    <div id="${id}" data-id= "${id}"  class = "noticeContainer">
+                        <button type="button" class="collapses">${data.title}</button>
+                        <div class="content hide" id="${id}content">
                             <p>${data.content}</p>
-                                <p>-${data.author}</p>
+                                <p>- ${data.author}</p>
                             <button class = "btn btn-danger deleteNotice" type ="click">Delete</button>
                         </div>
                     </div>
@@ -43,5 +42,23 @@ deleteNotice.addEventListener('click', e => {
        
         var dataId = e.target.parentElement.parentElement.getAttribute('data-id');
         db.collection('notices').doc(dataId).delete().then(e => console.log('Deleted Successfully')).catch(err => console.log(err));
+    }
+})
+
+noticeContainer.addEventListener("click", (e) => {
+    
+    const btn = e.target
+    if(btn.classList.contains("collapses")){
+        const parent = btn.parentElement.id;
+        if(!document.getElementById(parent).classList.contains("expanded")){
+        $("#"+parent+"content").slideDown(200,"linear",function(){
+            document.getElementById(parent).classList.add("expanded")
+        })
+        }
+        else if(document.getElementById(parent).classList.contains("expanded")){
+            $("#"+parent+"content").slideUp(200,"linear",function(){
+                document.getElementById(parent).classList.remove("expanded")
+            })
+        }
     }
 })

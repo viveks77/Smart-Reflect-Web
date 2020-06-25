@@ -99,7 +99,7 @@ body {
     padding : 0px 10px;
 }
 
-.collapsible {
+.collapses {
     background-color: transparent;
     color: #444;
     cursor: pointer;
@@ -115,13 +115,8 @@ body {
 
 button:focus {outline:0;}
 
-.content {
-    padding: 0 0px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    font-family: 'Roboto';
+.content{
+    margin : 10px 0px 15px 0px;
 }
 
 #add-notices{

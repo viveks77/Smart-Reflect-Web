@@ -41,6 +41,10 @@ body{
     font-size : 0.8rem;
 }
 
+.navbar{
+    font-family: 'Raleway';
+}
+
 #err{
     position: absolute;
     color : red;
